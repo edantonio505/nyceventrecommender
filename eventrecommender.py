@@ -12,7 +12,7 @@ def main():
     args = parser.parse_args()
 
     if args.today or args.all:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        # os.system('cls' if os.name == 'nt' else 'clear')
         today = args.today
         json = args.json
         recommender = Recommender(today, json)
