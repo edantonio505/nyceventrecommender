@@ -3,7 +3,7 @@ from datetime import datetime
 import requests
 import random
 import re
-
+import json
 
 # week days
 weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -73,7 +73,8 @@ class Recommender():
     def get_recommendation(self):
         choice = self.just_choose_this() 
         if self.json:
-            return choice
+            return json.dumps(choice)
+            # return choice
         message = ""
         if 'price' in choice:
             message += "price: {}\n".format(choice['price'])
